@@ -1,0 +1,23 @@
+{
+  "name": "woeab",
+  "version": "1.0.0",
+  "description": "Warlords of Erehwon Army Builder",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asarbs/WoEAB.git"
+  },
+  "author": "Bartosz Skorupa",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/asarbs/WoEAB/issues"
+  },
+  "homepage": "https://github.com/asarbs/WoEAB#readme",
+  "devDependencies": {
+    "electron": "^4.1.4"
+  }
+}
