@@ -1,0 +1,98 @@
+html, body 
+{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #1a0726;
+	font-family: 'Open Sans', sans-serif;
+    color: #e8dcef;
+}
+
+
+.column 
+{
+	float: left;
+	/*width: 33.33%;*/
+}
+
+
+.menu
+{
+	min-height: 100%;
+	background-color: #162b4c;
+	min-width: 150px;
+}
+
+/* Clear floats after the columns */
+.row:after 
+{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+button.main_bar_button
+{
+	margin: 0px;
+    padding: 0px;
+	background-color: #373459;
+	border: 1px solid #4a4863;
+	color: #e8dcef;
+}
+
+#main
+{}
+
+#main #top
+{
+	background-color: #162b4c;
+}
+
+.tab_button
+{
+	background-color: #373459;
+	border: 1px solid #4a4863;
+	color: #e8dcef;
+	border-radius: 8px 8px 0px 0px;
+	margin: 0px;
+    padding: 0px;
+}
+
+.middle_collumn
+{
+	min-width: 600px;
+	max-width: 700px;
+}
+
+.tab_content_container
+{
+	background-color: #FF0000;
+	margin: 0px;
+    padding: 0px;
+}
+
+.tabcontent
+{
+	display: none;
+	background-color: #005c99;
+	margin: 0px;
+    padding: 0px;
+}
+
+.tab_active
+{
+	background-color: #005c99;
+	border-radius: 8px 8px 0px 0px;
+	border-left: 1px solid #4a4863;
+	border-right: 1px solid #4a4863;
+	border-top: 1px solid #4a4863;
+	border-bottom: 1px solid #005c99;
+	margin: 0px;
+    padding: 0px;
+}
+
+.tab_header
+{
+		margin: 0px;
+    padding: 0px;
+}

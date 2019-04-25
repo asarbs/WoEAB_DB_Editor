@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles/main.css" />
+	<script src="scripts/index.js"></script>
+	<script src="scripts/tab.js"></script>
+</head>
+<body>
+
+	<div id="main">
+		<div id="top">
+			<!-- <button class="main_bar_button" onclick="openNewTab(event)"> Add new button </button> -->
+			Place holder for some aditional func
+		</div>
+		<div id="middle" class="row">
+			<div  id="dbStructDiv" class="column menu">
+
+			</div>
+  			<div class="column middle_collumn">
+  				<div id="tab_header" class="tab_header">
+<!-- 				<button class="tab_button tabButtonId_1" onclick="openTab(event, 1)"> Button #1 </button>
+					<button class="tab_button tabButtonId_2" onclick="openTab(event, 2)"> Button #2 </button>
+					<button class="tab_button tabButtonId_3" onclick="openTab(event, 3)"> Button #3 </button>
+					<button class="tab_button tabButtonId_4" onclick="openTab(event, 4)"> Button #4 </button>
+					<button class="tab_button tabButtonId_5" onclick="openTab(event, 5)"> Button #5 </button>
+					<button class="tab_button tabButtonId_6" onclick="openTab(event, 6)"> Button #6 </button>
+					<button class="tab_button tabButtonId_7" onclick="openTab(event, 7)"> Button #7 </button>
+					<button class="tab_button tabButtonId_8" onclick="openTab(event, 8)"> Button #8 </button> -->
+  				</div>
+  				<div id="tab_content_container" class="tab_content_container">
+<!-- 		  			<div class="tabcontent tabId_1">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur ligula mi, porta fermentum felis blandit quis. Etiam eros orci, posuere nec maximus eu, tempus ut leo. Fusce eu purus at odio tempus facilisis. Vivamus commodo mauris fringilla, malesuada risus eu, ultrices augue. Morbi felis enim, molestie condimentum pulvinar ac, dictum et est. Nulla feugiat tortor at pulvinar pulvinar. Proin at leo sit amet est consequat cursus sed in felis. Vivamus sit amet tincidunt metus. Vivamus interdum velit laoreet elementum iaculis. Nunc vitae nisl sit amet eros pretium venenatis. Aliquam blandit placerat metus, vel vestibulum nibh consectetur id.
+					</div>
+		  			<div class="tabcontent tabId_2">
+						Aenean ac odio suscipit, commodo sapien id, lobortis mi. Mauris in lacus facilisis, faucibus ante ut, pulvinar magna. In quis purus ullamcorper, ultricies nisi eget, consequat ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus viverra odio at porta molestie. Nulla vel pretium lorem. Phasellus mattis velit at faucibus rutrum. Sed blandit turpis ut nunc tempor, eget pretium orci cursus. In rhoncus rhoncus molestie. Sed et erat viverra, euismod nulla eget, tincidunt mi. Pellentesque scelerisque neque nec neque pellentesque, at vehicula tellus varius. Maecenas at metus id diam sollicitudin iaculis vel quis mauris. Suspendisse nisl elit, dictum pretium massa in, pretium bibendum dolor. Nunc commodo lorem sed laoreet commodo. Donec sit amet tortor eu sem semper feugiat et id augue.
+					</div>
+		  			<div class="tabcontent tabId_3">
+						Nullam semper faucibus nunc. Nunc vitae risus et augue sagittis ullamcorper nec nec lectus. Maecenas semper urna nibh. Duis erat odio, mollis at feugiat vitae, ultricies vitae metus. Nunc eget dui ut lectus faucibus cursus. Aliquam scelerisque rutrum neque at dapibus. Curabitur dignissim fringilla gravida. Sed eu augue sit amet nunc dignissim luctus. Phasellus vel convallis leo.
+					</div>
+		  			<div class="tabcontent tabId_4">
+						.Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer dictum convallis nulla, vel lacinia orci scelerisque mollis. Phasellus suscipit lobortis imperdiet. Curabitur non nisi in velit malesuada congue sed eget dolor. Integer egestas, nisi ac efficitur auctor, mi neque dapibus eros, eu molestie lacus lectus eu nunc. Donec egestas volutpat lorem a tincidunt. Praesent vel auctor nisi.
+					</div>
+		  			<div class="tabcontent tabId_5">
+						Vivamus vel mi at nunc consequat pharetra a et sapien. Phasellus blandit, erat vel sagittis pulvinar, mi lorem venenatis turpis, hendrerit condimentum dolor est id nulla. Ut non rutrum purus. Fusce at tortor sit amet felis molestie vestibulum quis quis dui. Nam sed odio tortor. Pellentesque ligula mi, gravida eget luctus in, dignissim a purus. Praesent sit amet urna ac enim luctus porttitor a quis turpis. Curabitur a faucibus ante, ac luctus sem. Vivamus euismod eu tortor sit amet fermentum. Nulla facilisi.
+					</div>
+		  			<div class="tabcontent tabId_6">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur ligula mi, porta fermentum felis blandit quis. Etiam eros orci, posuere nec maximus eu, tempus ut leo. Fusce eu purus at odio tempus facilisis. Vivamus commodo mauris fringilla, malesuada risus eu, ultrices augue. Morbi felis enim, molestie condimentum pulvinar ac, dictum et est. Nulla feugiat tortor at pulvinar pulvinar. Proin at leo sit amet est consequat cursus sed in felis. Vivamus sit amet tincidunt metus. Vivamus interdum velit laoreet elementum iaculis. Nunc vitae nisl sit amet eros pretium venenatis. Aliquam blandit placerat metus, vel vestibulum nibh consectetur id.
+					</div>
+		  			<div class="tabcontent tabId_7">
+						Aenean ac odio suscipit, commodo sapien id, lobortis mi. Mauris in lacus facilisis, faucibus ante ut, pulvinar magna. In quis purus ullamcorper, ultricies nisi eget, consequat ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus viverra odio at porta molestie. Nulla vel pretium lorem. Phasellus mattis velit at faucibus rutrum. Sed blandit turpis ut nunc tempor, eget pretium orci cursus. In rhoncus rhoncus molestie. Sed et erat viverra, euismod nulla eget, tincidunt mi. Pellentesque scelerisque neque nec neque pellentesque, at vehicula tellus varius. Maecenas at metus id diam sollicitudin iaculis vel quis mauris. Suspendisse nisl elit, dictum pretium massa in, pretium bibendum dolor. Nunc commodo lorem sed laoreet commodo. Donec sit amet tortor eu sem semper feugiat et id augue.
+					</div>
+		  			<div class="tabcontent tabId_8">
+						Nullam semper faucibus nunc. Nunc vitae risus et augue sagittis ullamcorper nec nec lectus. Maecenas semper urna nibh. Duis erat odio, mollis at feugiat vitae, ultricies vitae metus. Nunc eget dui ut lectus faucibus cursus. Aliquam scelerisque rutrum neque at dapibus. Curabitur dignissim fringilla gravida. Sed eu augue sit amet nunc dignissim luctus. Phasellus vel convallis leo.
+					</div> -->
+  				</div>
+  			</div>
+  			<div id="cell23 right_menu" class="column">
+  				
+				<ul>
+					<li>right_menu #1</li>
+					<li>right_menu #2</li>
+				 	<li>right_menu #3</li>
+					<li>right_menu #4</li>
+					<li>right_menu #5</li>
+				 	<li>right_menu #6</li>
+					<li>right_menu #7</li>
+					<li>right_menu #8</li>
+				 	<li>right_menu #9</li>
+					<li>right_menu #10</li>
+					<li>right_menu #11</li>
+				 	<li>right_menu #12</li>
+				</ul> 
+
+  			</div>
+		</div>
+		<div id="bottom">C</div>
+	</div>
+</body>
+</html>
