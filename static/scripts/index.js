@@ -2,7 +2,7 @@ const { ipcRenderer } = require('electron');
 path = require('path')
 const fs = require('fs')
 
-const { CREATE_NEW_ARMY, CREATE_NEW_SKILL, SAVE_DB } = require(path.resolve('actions/types'))
+const { CREATE_NEW_ARMY, CREATE_NEW_SKILL, CREATE_NEW_SPELL, CREATE_NEW_MELEE_WEAPON, CREATE_NEW_RANGE_WEAPON, SAVE_DB } = require(path.resolve('actions/types'))
 const dbStructureBuilder = require(path.resolve('actions/dbStructure'))
 const editTab = require(path.resolve('actions/editTab'))
 
@@ -52,6 +52,18 @@ ipcRenderer.on(CREATE_NEW_SKILL, (event) => {
 
 	document.getElementById(`dbStructDiv`).innerHTML = '';
 	dbStructureBuilder.build(db, `dbStructDiv`);
+});
+
+ipcRenderer.on(CREATE_NEW_MELEE_WEAPON, (event) => {
+    try {
+        id = db.weapons.melee[db.weapons.melee.length - 1].id + 1
+    } catch(err) {
+        id = 0
+    }
+    db.weapons.melee.push({id:id, name:"New melee weapon"})
+
+    document.getElementById(`dbStructDiv`).innerHTML = '';
+    dbStructureBuilder.build(db, `dbStructDiv`);
 });
 
 function loadDb()

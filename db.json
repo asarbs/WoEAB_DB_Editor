@@ -17,174 +17,47 @@
       "name": "Elf Warband"
     },
     {
-        "id":5,
-        "name":"Gnoll War Party"
+      "id": 5,
+      "name": "Gnoll War Party"
     },
     {
-        "id": 6,
-        "name":"Goblin Warband"
+      "id": 6,
+      "name": "Goblin Warband"
     },
     {
-        "id":7,
-        "name": "Hafling Warband"
+      "id": 7,
+      "name": "Hafling Warband"
     },
     {
-        "id":8,
-        "name": "Knightly Warband"
+      "id": 8,
+      "name": "Knightly Warband"
     },
     {
-        "id":9,
-        "name":"Olympian Warband"
+      "id": 9,
+      "name": "Olympian Warband"
     },
     {
-        "id":10,
-        "name":"Orc Warband"
+      "id": 10,
+      "name": "Orc Warband"
     },
     {
-        "id":11,
-        "name":"Undead Host"
+      "id": 11,
+      "name": "Undead Host"
     },
     {
-        "id":12,
-        "name":"Monsters"
+      "id": 12,
+      "name": "Monsters"
     }
   ],
   "spells": [],
-  "skills": [
-    {
-      "id": 1,
-      "name": "New Skill #1.1",
-      "cost": "5",
-      "requirements": "test req",
-      "effects": "test eff"
-    },
-    {
-      "id": 2,
-      "name": "New Skill #2",
-      "cost": "15",
-      "requirements": "requirements",
-      "effects": "effects"
-    }
-  ],
+  "skills": [],
   "weapons": {
     "melee": [
       {
-        "id": 1,
-        "name": "Some dissent name for melee weapon",
-        "cost": 16,
-        "strength": "3",
-        "characteristics": [
-          "5",
-          "6"
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Mele weapon name #2",
-        "characteristics": [
-          "1",
-          "2",
-          "9"
-        ],
-        "cost": "2",
-        "strength": "1"
-      },
-      {
-        "id": 3,
-        "name": "Mele weapon name #3",
-        "characteristics": [
-          "1",
-          "2",
-          "7",
-          "8",
-          "9"
-        ],
-        "cost": "12",
-        "strength": "12"
+        "id": 0,
+        "name": "New melee weapon"
       }
     ],
-    "range": [
-      {
-        "id": 1,
-        "name": "Range weapon  #1 ",
-        "cost": "123",
-        "characteristics": [
-          "7",
-          "8",
-          "9"
-        ],
-        "strength": "123"
-      },
-      {
-        "id": 2,
-        "name": "Range weapon name #2",
-        "characteristics": [
-          "1",
-          "2",
-          "8",
-          "9"
-        ],
-        "cost": "12",
-        "strength": "12"
-      },
-      {
-        "id": 3,
-        "name": "Range weapon name #3",
-        "characteristics": [
-          "7",
-          "8",
-          "9"
-        ],
-        "cost": "undefined",
-        "strength": "undefined"
-      }
-    ]
-  },
-  "characteristics": [
-    {
-      "id": "1",
-      "name": "Automatyczna",
-      "cost": 4
-    },
-    {
-      "id": "2",
-      "name": "Bez Celu",
-      "cost": 4
-    },
-    {
-      "id": "3",
-      "name": "Broń rzucana",
-      "cost": 4
-    },
-    {
-      "id": "4",
-      "name": "Wzornik: Duży",
-      "cost": 4
-    },
-    {
-      "id": "5",
-      "name": "Wzornik: Mały",
-      "cost": 4
-    },
-    {
-      "id": "6",
-      "name": "Ogień",
-      "cost": 4
-    },
-    {
-      "id": "7",
-      "name": "Zimno",
-      "cost": 4
-    },
-    {
-      "id": "8",
-      "name": "Magiczne",
-      "cost": 4
-    },
-    {
-      "id": "9",
-      "name": "Trucizny",
-      "cost": 4
-    }
-  ]
+    "range": []
+  }
 }

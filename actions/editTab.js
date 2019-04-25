@@ -45,37 +45,11 @@ function crateWeaponMeleeEditorHtml(melee_id, db)
 {
 
     const melee = getDBElementById(melee_id, db['weapons']);
-    var characteristics = "";
-    for(var c in db['characteristics'])
-    {
-        var checked = melee['characteristics'].indexOf(db['characteristics'][c]['id']) > -1 ? "checked" : "";
-        characteristics += `<input type="checkbox" 
-        class="characteristics_list_${melee_id}_[]" 
-        name="characteristics_list_${melee_id}_[]" 
-        value="${db['characteristics'][c]['id']}" 
-        onclick="saveMeleeWeapon('${melee_id}')" ${checked}>
-        <label>${db['characteristics'][c]['name']}</label><br/>`
-    }
-    
-    var strengthOptions = ""
-    for(var i = 0 ; i < 9 ; i++)
-    {
-        var selected = parseInt(melee['strength']) == i ? "selected" : "";
-        strengthOptions += `<option value="${i}" ${selected}>${i}</option>`
-    }
-
     var innerHtml = `
         <label for="melee_weapon_name_${melee_id}">Enter weapon name: </label>
         <input id="melee_weapon_name_${melee_id}" type="text" name="name_field" value="${melee['name']}" oninput="saveMeleeWeapon('${melee_id}')"><br>
-        <label for="melee_weapon_cost_${melee_id}">Enter weapon cost: </label>
-        <input id="melee_weapon_cost_${melee_id}" type="text" name="cost_field" value="${melee['cost']}" oninput="saveMeleeWeapon('${melee_id}')" readonly><br>
-        <label for="melee_weapon_strength_${melee_id}">Enter weapon strength: </label>
-        <select id="melee_weapon_strength_${melee_id}" type="text" name="cost_field" value="${melee['strength']}" oninput="saveMeleeWeapon('${melee_id}')">
-            ${strengthOptions}
-        </selct>
-        <br><br><br><br><br><br><br><br><br><br>
-        <label for="melee_weapon_characteristics_${melee_id}">Weapon characteristics:</label>
-        ${characteristics}
+        <label for="melee_weapon_cost_${melee_id}">Enter strike value: </label>
+        <input id="melee_weapon_cost_${melee_id}" type="text" name="sv_field" value="${melee['sv']}" oninput="saveMeleeWeapon('${melee_id}')" readonly><br>
     `;
     return innerHtml;
 }
