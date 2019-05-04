@@ -2,62 +2,113 @@
   "armies": [
     {
       "id": 1,
-      "name": "Barbarian Warband"
+      "name": "Barbarian Warband",
+      "units": []
     },
     {
       "id": 2,
-      "name": "Beastman Warband"
+      "name": "Beastman Warband",
+      "units": []
     },
     {
       "id": 3,
-      "name": "Dwarf Warband"
+      "name": "Dwarf Warband",
+      "units": []
     },
     {
       "id": 4,
-      "name": "Elf Warband"
+      "name": "Elf Warband",
+      "units": [
+		{
+			"id": 0,
+			"name": "Elven Lord"
+		},
+		{
+			"id": 1,
+			"name": "Mounted Elven Lord"
+		}
+		]
     },
     {
       "id": 5,
-      "name": "Gnoll War Party"
+      "name": "Gnoll War Party",
+      "units": []
     },
     {
       "id": 6,
-      "name": "Goblin Warband"
+      "name": "Goblin Warband",
+      "units": []
     },
     {
       "id": 7,
-      "name": "Hafling Warband"
+      "name": "Hafling Warband",
+      "units": []
     },
     {
       "id": 8,
-      "name": "Knightly Warband"
+      "name": "Knightly Warband",
+      "units": []
     },
     {
       "id": 9,
-      "name": "Olympian Warband"
+      "name": "Olympian Warband",
+      "units": []
     },
     {
       "id": 10,
-      "name": "Orc Warband"
+      "name": "Orc Warband",
+      "units": []
     },
     {
       "id": 11,
-      "name": "Undead Host"
+      "name": "Undead Host",
+      "units": []
     },
     {
       "id": 12,
-      "name": "Monsters"
+      "name": "Monsters",
+      "units": []
     }
   ],
-  "spells": [],
-  "skills": [],
+  "spells": [
+    {
+      "id": 0,
+      "name": "New spell",
+      "effects": "undefinedfasdfsd"
+    }
+  ],
+  "skills": [
+    {
+      "id": 0,
+      "name": "Alied Monster ",
+      "effects": "Unaffected by Commander, Hero or Flow rules."
+    }
+  ],
   "weapons": {
     "melee": [
       {
         "id": 0,
-        "name": "New melee weapon"
+        "name": "Rock",
+        "sv": 0,
+        "special_rules": "Can also be thrown as range weapon"
+      },
+      {
+        "id": 1,
+        "name": "Cudgel or Club",
+        "sv": 0,
+        "special_rules": "-"
       }
     ],
-    "range": []
+    "range": [
+      {
+        "id": 0,
+        "name": "Bow",
+        "short": "0-10\"",
+        "long": "10-20\"",
+        "extreme": "-",
+        "sv": "0",
+        "special_rules": "-"
+      }
+    ]
   }
 }

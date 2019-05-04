@@ -54,6 +54,18 @@ ipcRenderer.on(CREATE_NEW_SKILL, (event) => {
 	dbStructureBuilder.build(db, `dbStructDiv`);
 });
 
+ipcRenderer.on(CREATE_NEW_SPELL, (event) => {
+	try{
+		id = db.spells[db.spells.length - 1].id + 1
+	} catch(err) {
+		id = 0;
+	}
+	db.spells.push({id:id, name:"New spell"});
+
+	document.getElementById(`dbStructDiv`).innerHTML = '';
+	dbStructureBuilder.build(db, `dbStructDiv`);
+});
+
 ipcRenderer.on(CREATE_NEW_MELEE_WEAPON, (event) => {
     try {
         id = db.weapons.melee[db.weapons.melee.length - 1].id + 1
@@ -61,6 +73,18 @@ ipcRenderer.on(CREATE_NEW_MELEE_WEAPON, (event) => {
         id = 0
     }
     db.weapons.melee.push({id:id, name:"New melee weapon"})
+
+    document.getElementById(`dbStructDiv`).innerHTML = '';
+    dbStructureBuilder.build(db, `dbStructDiv`);
+});
+
+ipcRenderer.on(CREATE_NEW_RANGE_WEAPON, (event) => {
+    try {
+        id = db.weapons.range[db.weapons.range.length - 1].id + 1
+    } catch(err) {
+        id = 0
+    }
+    db.weapons.range.push({id:id, name:"New range weapon"})
 
     document.getElementById(`dbStructDiv`).innerHTML = '';
     dbStructureBuilder.build(db, `dbStructDiv`);
@@ -91,14 +115,19 @@ function openSkillsTab(skill_id)
 	editTab.openSkillTab(skill_id, db);
 }
 
+function openSpellsTab(spell_id)
+{
+	editTab.openSpellTab(spell_id, db);
+}
+
 function openWeaponMeleeTab(melee_id)
 {
 	editTab.openWeaponMeleeTab(melee_id, db);
 }
 
-function openWeaponRangeTab(melee_id)
+function openWeaponRangeTab(range_id)
 {
-	editTab.openWeaponRangeTab(melee_id, db);
+	editTab.openWeaponRangeTab(range_id, db);
 }
 
 function saveArmy(army_Id)
@@ -111,64 +140,54 @@ function saveArmy(army_Id)
 function saveSkill(id)
 {
 	name = document.getElementById(`skill_name_${id}`).value;
-	cost = document.getElementById(`skill_cost_${id}`).value;
-	requirements = document.getElementById(`skill_requirements_${id}`).value;
 	effects = document.getElementById(`skill_effects_${id}`).value;
+	
 	skill = editTab.getDBElementById(id, db);
 	skill['name'] = name;
-	skill['cost'] = cost;
-	skill['requirements'] = requirements;
 	skill['effects'] = effects;
+}
+
+function saveSpell(id)
+{
+	name = document.getElementById(`spell_name_${id}`).value;
+	effects = document.getElementById(`spell_effects_${id}`).value;
+	
+	spell = editTab.getDBElementById(id, db);
+	spell['name'] = name;
+	spell['effects'] = effects;
 }
 
 function saveMeleeWeapon(id)
 {
 	name = document.getElementById(`melee_weapon_name_${id}`).value;
-	cost = parseInt(document.getElementById(`melee_weapon_cost_${id}`).value);
-	strength = document.getElementById(`melee_weapon_strength_${id}`).value;
-	const selector = `characteristics_list_${id}_[]`;
-
-	var strengthValue = {0:-6, 1:-2, 2:2, 3:6, 4:10, 5:14, 6:18, 7:22, 8:26, 9:30}
-	cost = strengthValue[strength]
-
-	characteristics = document.getElementsByClassName(selector);
+	sv = parseInt(document.getElementById(`melee_weapon_sv_${id}`).value);
+	special_rules = document.getElementById(`melee_weapon_special_rules_${id}`).value;
 
 	meleeWeapon = editTab.getDBElementById(id, db['weapons']);
-	meleeWeapon['characteristics'] = []
-	for (var i=0; i < characteristics.length; i++) 
-	{
-    	if (characteristics[i].checked) 
-    	{
-     		meleeWeapon['characteristics'].push(characteristics[i].value);
-    	}
-	}
-
 	meleeWeapon['name'] = name;
-	meleeWeapon['cost'] = cost;
-	meleeWeapon['strength'] = strength;
-	console.log(meleeWeapon);
+	meleeWeapon['sv'] = sv;
+	meleeWeapon['special_rules'] = special_rules;
+
 }
 
 function saveRangeWeapon(id)
 {
 	name = document.getElementById(`range_weapon_name_${id}`).value;
-	cost = document.getElementById(`range_weapon_cost_${id}`).value;
-	strength = document.getElementById(`range_weapon_cost_${id}`).value;
+	sv = document.getElementById(`range_weapon_sv_${id}`).value;
+	
+	short = document.getElementById(`range_weapon_short_${id}`).value;
+	long = document.getElementById(`range_weapon_long_${id}`).value;
+	extreme = document.getElementById(`range_weapon_extreme_${id}`).value;
+	
+	special_rules = document.getElementById(`range_weapon_special_rules_${id}`).value;
+	
 	rangeWeapon = editTab.getDBElementById(id, db['weapons']);
-
-	const selector = `characteristics_list_${id}_[]`;
-	console.log(selector);
-	characteristics = document.getElementsByClassName(selector);
-	rangeWeapon['characteristics'] = []
-	for (var i=0; i < characteristics.length; i++) 
-	{
-    	if (characteristics[i].checked) 
-    	{
-     		rangeWeapon['characteristics'].push(characteristics[i].value);
-    	}
-	}
-
 	rangeWeapon['name'] = name;
-	rangeWeapon['cost'] = cost;
-	rangeWeapon['strength'] = strength;
+	
+	rangeWeapon['short'] = short;
+	rangeWeapon['long'] = long;
+	rangeWeapon['extreme'] = extreme;
+	
+	rangeWeapon['sv'] = sv;
+	rangeWeapon['special_rules'] = special_rules;
 }

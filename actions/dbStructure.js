@@ -12,9 +12,38 @@ function buildDBStructure(db, itemToAdd)
 		dbStructUl.appendChild(li);
 	}
 	dbStructDiv.appendChild(dbStructUl);
-	buildMenu(db, 'armies', `dbStructUl_element_armies`, 'openArmyTab');
+	buildArmiesMenu(db, 'armies', `dbStructUl_element_armies`, 'openArmyTab');
 	buildMenu(db, 'skills', `dbStructUl_element_skills`, 'openSkillsTab');
+	buildMenu(db, 'spells', `dbStructUl_element_spells`, 'openSpellsTab');
 	buildWeaponMenu(db['weapons'], `dbStructUl_element_weapons`);
+}
+
+function buildArmiesMenu(db, type, itemToAdd, js_onclickFunction)
+{
+	var dbStruct = document.getElementById(itemToAdd)
+	dbStructUl = document.createElement("ul")
+	dbStructUl.setAttribute("id", "dbStructureUlArmies"); // added line
+
+	db[type].map( (item) => {
+		var li = document.createElement("li");
+		li.appendChild( document.createTextNode( item.name ));
+		const fullId = `${type}.${item.id}` 
+		li.setAttribute('ondblclick', `${js_onclickFunction}("${fullId}")`);
+		li.setAttribute('id', `dbStructureUlArmies.${item.id}`)
+		dbStructUl.appendChild(li);
+	});
+	dbStruct.appendChild(dbStructUl);
+		
+	for(var item in db.armies)
+	{
+		const army_item_id = `dbStructureUlArmies.${db.armies[item].id}`
+		var dbStruct = document.getElementById(army_item_id)
+		dbStructUl = document.createElement("ul")
+		
+		
+		dbStructUl.appendChild(li);
+		dbStruct.appendChild(dbStructUl)
+	}
 }
 
 function buildMenu(db, type, itemToAdd, js_onclickFunction)
@@ -26,7 +55,7 @@ function buildMenu(db, type, itemToAdd, js_onclickFunction)
 		var li = document.createElement("li");
 		li.appendChild( document.createTextNode( item.name ));
 		const fullId = `${type}.${item.id}` 
-		li.setAttribute('onclick', `${js_onclickFunction}("${fullId}")`);
+		li.setAttribute('ondblclick', `${js_onclickFunction}("${fullId}")`);
 		dbStructUl.appendChild(li);
 	});
 	dbStruct.appendChild(dbStructUl);
