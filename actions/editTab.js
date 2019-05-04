@@ -13,7 +13,15 @@ function getDBElementById(id, db)
 		{
 			return elementsList[element];
 		}
-	}	
+	}
+}
+
+function getDBUnit(url,db)
+{
+	var urls = url.split(".");
+	const army = getDBElementById(`armies.${urls[1]}`,db)
+	const unit = getDBElementById(`units.${urls[2]}`, army)
+	return unit;
 }
 
 function createArmyEditorHtml(army_Id, db)
@@ -89,6 +97,21 @@ function crateWeaponRangeEditorHtml(range_id, db)
     return innerHtml;
 }
 
+function createUnitEditHtml(id, db)
+{
+	var unit = getDBUnit(id, db);
+	
+	var innerHtml = `
+		<label for="unit_name_${id}">Enter weapon name: </label>
+        <input id="unit_name_${id}" type="text" name="name_field" value="${unit['name']}" oninput="saveUnit('${id}')"><br>
+		<label for="unit_point_value_${id}">Enter point value: </label>
+        <input id="unit_point_value_${id}" type="text" name="name_field" value="${unit['point_value']}" oninput="saveUnit('${id}')"><br>
+		<label for="unit_type_${id}">Enter point value: </label>
+        <input id="unit_type_${id}" type="text" name="name_field" value="${unit['type']}" oninput="saveUnit('${id}')"><br>
+	`;
+	return innerHtml;
+}
+
 function openFullTab(id, db, editorFun)
 {
 	var tabIsOpen = document.getElementsByClassName(`tabId_${id}`);
@@ -117,7 +140,6 @@ function openFullTab(id, db, editorFun)
 function openArmyTab(army_Id, db)
 {
 	openFullTab(army_Id, db, createArmyEditorHtml);
-
 }
 
 function openSkillTab(skill_id, db)
@@ -137,12 +159,19 @@ function openWeaponMeleeTab(melee_id, db)
 
 function openWeaponRangeTab(melee_id, db)
 {
-    openFullTab(melee_id, db, crateWeaponRangeEditorHtml);   
+    openFullTab(melee_id, db, crateWeaponRangeEditorHtml);
+}
+
+function openUnitEditTab(unitId, db)
+{
+	openFullTab(unitId, db, createUnitEditHtml);
 }
 
 module.exports.openArmyTab = openArmyTab
+module.exports.openUnitEditTab = openUnitEditTab
 module.exports.openSkillTab = openSkillTab
 module.exports.openSpellTab = openSpellTab
 module.exports.getDBElementById = getDBElementById;
+module.exports.getDBUnit = getDBUnit;
 module.exports.openWeaponMeleeTab = openWeaponMeleeTab
 module.exports.openWeaponRangeTab = openWeaponRangeTab

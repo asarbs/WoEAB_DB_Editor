@@ -110,6 +110,11 @@ function openArmyTab(army_Id)
 	editTab.openArmyTab(army_Id, db);
 }
 
+function unitEditTab(unitId)
+{
+	editTab.openUnitEditTab(unitId, db);
+}
+
 function openSkillsTab(skill_id)
 {
 	editTab.openSkillTab(skill_id, db);
@@ -190,4 +195,16 @@ function saveRangeWeapon(id)
 	
 	rangeWeapon['sv'] = sv;
 	rangeWeapon['special_rules'] = special_rules;
+}
+
+function saveUnit(id) 
+{
+	name = document.getElementById(`unit_name_${id}`).value;
+	point_value = document.getElementById(`unit_point_value_${id}`).value;
+	type = document.getElementById(`unit_type_${id}`).value;
+	
+	unit = editTab.getDBUnit(id, db);
+	unit['name'] = name;
+	unit['point_value'] = point_value
+	unit['type'] = type
 }

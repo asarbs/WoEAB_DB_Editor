@@ -36,14 +36,25 @@ function buildArmiesMenu(db, type, itemToAdd, js_onclickFunction)
 		
 	for(var item in db.armies)
 	{
-		const army_item_id = `dbStructureUlArmies.${db.armies[item].id}`
-		var dbStruct = document.getElementById(army_item_id)
-		dbStructUl = document.createElement("ul")
+		const army_id = `${db.armies[item].id}`
+		const army_item_id = `dbStructureUlArmies.${army_id}`
+		const army_ul_item = document.getElementById(army_item_id)
+		dbStructUlUnits = document.createElement("ul")
 		
-		
-		dbStructUl.appendChild(li);
-		dbStruct.appendChild(dbStructUl)
+		for(var unit in db.armies[item].units)
+		{
+			var li = document.createElement("li");
+			var unit_name = db.armies[item].units[unit].name
+			var unit_id = db.armies[item].units[unit].id
+			const fullId = `unit.${army_id}.${unit_id}` 
+			li.setAttribute('ondblclick', `unitEditTab("${fullId}")`);
+			
+			li.appendChild( document.createTextNode( unit_name ));
+			dbStructUlUnits.appendChild(li);
+		}
+		army_ul_item.appendChild(dbStructUlUnits);
 	}
+	
 }
 
 function buildMenu(db, type, itemToAdd, js_onclickFunction)

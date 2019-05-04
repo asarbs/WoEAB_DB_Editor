@@ -19,15 +19,17 @@
       "id": 4,
       "name": "Elf Warband",
       "units": [
-		{
-			"id": 0,
-			"name": "Elven Lord"
-		},
-		{
-			"id": 1,
-			"name": "Mounted Elven Lord"
-		}
-		]
+        {
+          "id": 0,
+          "name": "Elven Lord",
+          "point_value": "108",
+          "type": "Warlord Warrior Unit"
+        },
+        {
+          "id": 1,
+          "name": "Mounted Elven Lord"
+        }
+      ]
     },
     {
       "id": 5,
