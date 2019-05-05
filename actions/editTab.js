@@ -108,7 +108,56 @@ function createUnitEditHtml(id, db)
         <input id="unit_point_value_${id}" type="text" name="name_field" value="${unit['point_value']}" oninput="saveUnit('${id}')"><br>
 		<label for="unit_type_${id}">Enter point value: </label>
         <input id="unit_type_${id}" type="text" name="name_field" value="${unit['type']}" oninput="saveUnit('${id}')"><br>
-	`;
+        
+		<table border="1">
+		  <tr>
+			<th>Ammount</th>
+			<th>Name</th>
+			<th>Ag</th>
+			<th>Acc</th>
+			<th>Str</th>
+			<th>Res</th>
+			<th>Init</th>
+			<th>Co</th>
+			<th>Special</th>
+		  </tr>`
+		  
+		for(x = 0; x < 5; x++)
+		{
+			innerHtml += `
+			<tr>
+				<td>
+					<input id="unit_${id}_${x}_ammount" type="text" value="x" oninput="saveUnit('${id}')" size="2">
+				</td>
+				<td>
+					<input id="unit_${id}_${x}_name" type="text" value="x" oninput="saveUnit('${id}')" size="25">
+				</td>
+				<td>
+					<input id="unit_${id}_${x}_ag" type="text" value="x" oninput="saveUnit('${id}')" size="2">
+				</td>
+				<td>
+					<input id="unit_${id}_${x}_acc" type="text" value="x" oninput="saveUnit('${id}')" size="2">
+				</td>
+				<td>
+					<input id="unit_${id}_${x}_str" type="text" value="x" oninput="saveUnit('${id}')" size="2">
+				</td>
+				<td>
+					<input id="unit_${id}_${x}_res" type="text" value="x" oninput="saveUnit('${id}')" size="5">
+				</td>
+				<td>
+					<input id="unit_${id}_${x}_init" type="text" value="x" oninput="saveUnit('${id}')" size="2">
+				</td>
+				<td>
+					<input id="unit_${id}_${x}_co" type="text" value="x" oninput="saveUnit('${id}')" size="2">
+				</td>
+				<td>
+					<textarea id="unit_${id}_${x}_special" oninput="saveUnit('${id}')" rows="4" cols="25">
+					x
+					</textarea>
+				</td>
+			</tr>`
+		}
+	innerHtml += `</table>`;
 	return innerHtml;
 }
 

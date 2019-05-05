@@ -203,8 +203,26 @@ function saveUnit(id)
 	point_value = document.getElementById(`unit_point_value_${id}`).value;
 	type = document.getElementById(`unit_type_${id}`).value;
 	
+	stats = []
+	
+	for(x = 0 ; x < 5 ; x++)
+	{
+		var stat = {}
+		stat[`ammount`] = document.getElementById(`unit_${id}_${x}_ammount`).value;
+		stat[`name`] = document.getElementById(`unit_${id}_${x}_name`).value;
+		stat[`ag`] = document.getElementById(`unit_${id}_${x}_ag`).value;
+		stat[`acc`] = document.getElementById(`unit_${id}_${x}_acc`).value;
+		stat[`str`] = document.getElementById(`unit_${id}_${x}_str`).value;
+		stat[`res`] = document.getElementById(`unit_${id}_${x}_res`).value;
+		stat[`init`] = document.getElementById(`unit_${id}_${x}_init`).value;
+		stat[`co`] = document.getElementById(`unit_${id}_${x}_co`).value;
+		stat[`special`] = document.getElementById(`unit_${id}_${x}_special`).value;
+		stats.push(stat)
+	}
+	
 	unit = editTab.getDBUnit(id, db);
 	unit['name'] = name;
 	unit['point_value'] = point_value
 	unit['type'] = type
+	unit['stats'] = stats
 }

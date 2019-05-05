@@ -27,7 +27,66 @@
         },
         {
           "id": 1,
-          "name": "Mounted Elven Lord"
+          "name": "Mounted Elven Lord",
+          "point_value": "undefined",
+          "type": "undefined",
+          "stats": [
+            {
+              "ammount": "x",
+              "name": "1",
+              "ag": "x",
+              "acc": "x",
+              "str": "x",
+              "res": "x",
+              "init": "x",
+              "co": "x",
+              "special": "\t\t\t\t\tx\n\t\t\t\t\t"
+            },
+            {
+              "ammount": "x",
+              "name": "x",
+              "ag": "x",
+              "acc": "x",
+              "str": "x",
+              "res": "x",
+              "init": "x",
+              "co": "x",
+              "special": "\t\t\t\t\tx\n\t\t\t\t\t"
+            },
+            {
+              "ammount": "x",
+              "name": "x",
+              "ag": "x",
+              "acc": "x",
+              "str": "x",
+              "res": "x",
+              "init": "x",
+              "co": "x",
+              "special": "\t\t\t\t\tx\n\t\t\t\t\t"
+            },
+            {
+              "ammount": "x",
+              "name": "x",
+              "ag": "x",
+              "acc": "x",
+              "str": "x",
+              "res": "x",
+              "init": "x",
+              "co": "x",
+              "special": "\t\t\t\t\tx\n\t\t\t\t\t"
+            },
+            {
+              "ammount": "x",
+              "name": "x",
+              "ag": "x",
+              "acc": "x",
+              "str": "x",
+              "res": "x",
+              "init": "x",
+              "co": "x",
+              "special": "\t\t\t\t\tx\n\t\t\t\t\t"
+            }
+          ]
         }
       ]
     },
