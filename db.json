@@ -23,7 +23,74 @@
           "id": 0,
           "name": "Elven Lord",
           "point_value": "108",
-          "type": "Warlord Warrior Unit"
+          "type": "Warlord Warrior Unit",
+          "stats": [
+            {
+              "ammount": "x",
+              "name": "x",
+              "weapon": [
+                "weapons.range.0",
+                "weapons.melee.1"
+              ],
+              "ag": "x",
+              "acc": "x",
+              "str": "x",
+              "res": "x",
+              "init": "x",
+              "co": "x",
+              "special": [
+                "skills.0"
+              ]
+            },
+            {
+              "ammount": "x",
+              "name": "x",
+              "weapon": [],
+              "ag": "x",
+              "acc": "x",
+              "str": "x",
+              "res": "x",
+              "init": "x",
+              "co": "x",
+              "special": []
+            },
+            {
+              "ammount": "x",
+              "name": "x",
+              "weapon": [],
+              "ag": "x",
+              "acc": "x",
+              "str": "x",
+              "res": "x",
+              "init": "x",
+              "co": "x",
+              "special": []
+            },
+            {
+              "ammount": "x",
+              "name": "x",
+              "weapon": [],
+              "ag": "x",
+              "acc": "x",
+              "str": "x",
+              "res": "x",
+              "init": "x",
+              "co": "x",
+              "special": []
+            },
+            {
+              "ammount": "x",
+              "name": "x",
+              "weapon": [],
+              "ag": "x",
+              "acc": "x",
+              "str": "x",
+              "res": "x",
+              "init": "x",
+              "co": "x",
+              "special": []
+            }
+          ]
         },
         {
           "id": 1,
@@ -33,58 +100,66 @@
           "stats": [
             {
               "ammount": "x",
-              "name": "1",
+              "name": "x",
+              "weapon": [],
               "ag": "x",
               "acc": "x",
               "str": "x",
               "res": "x",
               "init": "x",
               "co": "x",
-              "special": "\t\t\t\t\tx\n\t\t\t\t\t"
+              "special": ""
             },
             {
               "ammount": "x",
               "name": "x",
+              "weapon": [],
               "ag": "x",
               "acc": "x",
               "str": "x",
               "res": "x",
               "init": "x",
               "co": "x",
-              "special": "\t\t\t\t\tx\n\t\t\t\t\t"
+              "special": ""
             },
             {
               "ammount": "x",
               "name": "x",
+              "weapon": [
+                "weapons.melee.1",
+                "weapons.melee.0"
+              ],
               "ag": "x",
               "acc": "x",
               "str": "x",
               "res": "x",
               "init": "x",
               "co": "x",
-              "special": "\t\t\t\t\tx\n\t\t\t\t\t"
+              "special": ["skills.0"]
             },
             {
               "ammount": "x",
               "name": "x",
+              "weapon": [],
               "ag": "x",
               "acc": "x",
               "str": "x",
               "res": "x",
               "init": "x",
               "co": "x",
-              "special": "\t\t\t\t\tx\n\t\t\t\t\t"
+              "special": ""
             },
             {
               "ammount": "x",
               "name": "x",
+              "weapon": [],
               "ag": "x",
               "acc": "x",
               "str": "x",
               "res": "x",
               "init": "x",
               "co": "x",
-              "special": "\t\t\t\t\tx\n\t\t\t\t\t"
+              "special": ""
             }
           ]
         }
