@@ -248,7 +248,8 @@ function fetchOptions(id)
 		
 		option[`cost`] = document.getElementById(`unit_${id}_${x}_options_cost`).value;
 		option[`max`] = document.getElementById(`unit_${id}_${x}_options_max`).value;
-		out.push(option)
+		if(option[`text`] != `x`)
+			out.push(option)
 	}
 	return out
 }
@@ -274,7 +275,8 @@ function saveUnit(id)
 		stat[`init`] = document.getElementById(`unit_${id}_${x}_init`).value;
 		stat[`co`] = document.getElementById(`unit_${id}_${x}_co`).value;
 		stat[`special`] = fetchSelectedSpecial(id, x)
-		stats.push(stat)
+		if(stat[`ammount`] != `x`)
+			stats.push(stat)
 	}
 	
 	unit = editTab.getDBUnit(id, db);
@@ -285,3 +287,4 @@ function saveUnit(id)
 	unit['options'] = fetchOptions(id)
 	console.log(unit)
 }
+	
