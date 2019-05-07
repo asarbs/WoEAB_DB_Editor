@@ -197,7 +197,7 @@ function saveRangeWeapon(id)
 	rangeWeapon['special_rules'] = special_rules;
 }
 
-function feachSelectedWeapons(id, x)
+function fetchSelectedWeapons(id, x)
 {
 	weapon = []
 	
@@ -216,7 +216,7 @@ function feachSelectedWeapons(id, x)
 	return weapon
 }
 
-function feachSelectedSpecial(id, x)
+function fetchSelectedSpecial(id, x)
 {
 	weapon = []
 	
@@ -235,6 +235,24 @@ function feachSelectedSpecial(id, x)
 	return weapon
 }
 
+function fetchOptions(id)
+{
+	out = []
+	for(x = 0 ; x < 10 ; x++)
+	{
+		var option = {}
+		option[`text`] = document.getElementById(`unit_${id}_${x}_options_text`).value;
+		
+		var type = document.getElementById(`unit_${id}_${x}_options_type`)
+		option[`type`] = type.options[type.selectedIndex].value;
+		
+		option[`cost`] = document.getElementById(`unit_${id}_${x}_options_cost`).value;
+		option[`max`] = document.getElementById(`unit_${id}_${x}_options_max`).value;
+		out.push(option)
+	}
+	return out
+}
+
 function saveUnit(id) 
 {
 	name = document.getElementById(`unit_name_${id}`).value;
@@ -248,14 +266,14 @@ function saveUnit(id)
 		var stat = {}
 		stat[`ammount`] = document.getElementById(`unit_${id}_${x}_ammount`).value;
 		stat[`name`] = document.getElementById(`unit_${id}_${x}_name`).value;
-		stat[`weapon`] = feachSelectedWeapons(id, x);
+		stat[`weapon`] = fetchSelectedWeapons(id, x);
 		stat[`ag`] = document.getElementById(`unit_${id}_${x}_ag`).value;
 		stat[`acc`] = document.getElementById(`unit_${id}_${x}_acc`).value;
 		stat[`str`] = document.getElementById(`unit_${id}_${x}_str`).value;
 		stat[`res`] = document.getElementById(`unit_${id}_${x}_res`).value;
 		stat[`init`] = document.getElementById(`unit_${id}_${x}_init`).value;
 		stat[`co`] = document.getElementById(`unit_${id}_${x}_co`).value;
-		stat[`special`] = feachSelectedSpecial(id, x)
+		stat[`special`] = fetchSelectedSpecial(id, x)
 		stats.push(stat)
 	}
 	
@@ -264,5 +282,6 @@ function saveUnit(id)
 	unit['point_value'] = point_value
 	unit['type'] = type
 	unit['stats'] = stats
+	unit['options'] = fetchOptions(id)
 	console.log(unit)
 }

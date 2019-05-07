@@ -192,6 +192,36 @@ function createUnitEditHtml(id, db)
 			</tr>`
 		}
 	innerHtml += `</table>`;
+	innerHtml += `<table border="1">
+		  <tr>
+			<th>text</th>
+			<th>type</th>
+			<th>cost</th>
+			<th>max amount</th>
+		  </tr>`
+		  
+	for(var i = 0 ; i < 10 ; i++)
+	{
+		innerHtml += `
+		<tr>
+			<td>
+				<input id="unit_${id}_${i}_options_text" type="text" value="x" oninput="saveUnit('${id}')" size="50">
+			</td>
+			<td>
+				<select id="unit_${id}_${i}_options_type" name="multi" oninput="saveUnit('${id}')" >
+					<option value="one_time">one time</option>
+					<option value="for_model">for model</option>
+					<option value="add_model">add model</option>
+				</select></td>
+			<td>
+				<input id="unit_${id}_${i}_options_cost" type="text" value="x" oninput="saveUnit('${id}')" size="5">
+			</td>
+			<td>
+				<input id="unit_${id}_${i}_options_max" type="text" value="x" oninput="saveUnit('${id}')" size="5">
+			</td>
+		</tr>`
+	}
+	innerHtml += `</table>`;
 	return innerHtml;
 }
 

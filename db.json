@@ -28,19 +28,14 @@
             {
               "ammount": "x",
               "name": "x",
-              "weapon": [
-                "weapons.range.0",
-                "weapons.melee.1"
-              ],
+              "weapon": [],
               "ag": "x",
               "acc": "x",
               "str": "x",
               "res": "x",
               "init": "x",
-              "co": "x",
-              "special": [
-                "skills.0"
-              ]
+              "co": "9",
+              "special": []
             },
             {
               "ammount": "x",
@@ -90,6 +85,68 @@
               "co": "x",
               "special": []
             }
+          ],
+          "options": [
+            {
+              "text": "x",
+              "type": "one_time",
+              "cost": "x",
+              "max": "x"
+            },
+            {
+              "text": "x",
+              "type": "one_time",
+              "cost": "x",
+              "max": "x"
+            },
+            {
+              "text": "x",
+              "type": "one_time",
+              "cost": "x",
+              "max": "x"
+            },
+            {
+              "text": "x",
+              "type": "one_time",
+              "cost": "x",
+              "max": "x"
+            },
+            {
+              "text": "x",
+              "type": "one_time",
+              "cost": "x",
+              "max": "x"
+            },
+            {
+              "text": "x",
+              "type": "one_time",
+              "cost": "x",
+              "max": "x"
+            },
+            {
+              "text": "x",
+              "type": "one_time",
+              "cost": "x",
+              "max": "x"
+            },
+            {
+              "text": "x",
+              "type": "one_time",
+              "cost": "x",
+              "max": "x"
+            },
+            {
+              "text": "x",
+              "type": "one_time",
+              "cost": "x",
+              "max": "x"
+            },
+            {
+              "text": "x",
+              "type": "one_time",
+              "cost": "x",
+              "max": "x"
+            }
           ]
         },
         {
@@ -135,7 +192,9 @@
               "res": "x",
               "init": "x",
               "co": "x",
-              "special": ["skills.0"]
+              "special": [
+                "skills.0"
+              ]
             },
             {
               "ammount": "x",
