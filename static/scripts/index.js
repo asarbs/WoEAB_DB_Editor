@@ -259,6 +259,7 @@ function saveUnit(id)
 	name = document.getElementById(`unit_name_${id}`).value;
 	point_value = document.getElementById(`unit_point_value_${id}`).value;
 	type = document.getElementById(`unit_type_${id}`).value;
+	special = document.getElementById(`unit_special_${id}`).value;
 	
 	stats = []
 	
@@ -283,6 +284,7 @@ function saveUnit(id)
 	unit['name'] = name;
 	unit['point_value'] = point_value
 	unit['type'] = type
+	unit['special'] = special
 	unit['stats'] = stats
 	unit['options'] = fetchOptions(id)
 	console.log(unit)

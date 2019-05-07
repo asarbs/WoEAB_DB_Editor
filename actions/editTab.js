@@ -136,6 +136,8 @@ function createUnitEditHtml(id, db)
         <input id="unit_point_value_${id}" type="text" name="name_field" value="${unit['point_value']}" oninput="saveUnit('${id}')"><br>
 		<label for="unit_type_${id}">Enter point value: </label>
         <input id="unit_type_${id}" type="text" name="name_field" value="${unit['type']}" oninput="saveUnit('${id}')"><br>
+		<label for="unit_special_${id}">Enter special value: </label>
+        <input id="unit_special_${id}" type="text" name="name_field" value="${unit['special']}" oninput="saveUnit('${id}')"><br>
         
 		<table border="1">
 		  <tr>
