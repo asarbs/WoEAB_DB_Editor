@@ -35,7 +35,7 @@
           "type": "undefined",
           "stats": [
             {
-              "ammount": "x",
+              "ammount": "1",
               "name": "x",
               "weapon": [],
               "ag": "x",
@@ -43,7 +43,7 @@
               "str": "x",
               "res": "x",
               "init": "x",
-              "co": "x",
+              "co": "9",
               "special": ""
             },
             {

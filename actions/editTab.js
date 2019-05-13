@@ -97,37 +97,55 @@ function crateWeaponRangeEditorHtml(range_id, db)
     return innerHtml;
 }
 
-function createWeaponOptions(db, type)
+function createWeaponOptions(db, type, user_weapon)
 {
 	var weapon_options = ""
 	for(var weapon in db['weapons'][type])
 	{
 		var id = db['weapons'][type][weapon].id
 		var name = db['weapons'][type][weapon].name
-		weapon_options += `<option value="weapons.${type}.${id}">${name}</option>\n`
+		var value = `weapons.${type}.${id}`
+		var selected = user_weapon.includes(value) ? "selected" : ""
+		
+		weapon_options += `<option value="${value}" ${selected}>${name}</option>\n`
 	}
 	return weapon_options
 }
 
-function createSpecialOptions(db)
+function createSpecialOptions(db, user_special)
 {
+	console.log(user_special)
 	var options = ""
 	for(var skill in db['skills'])
 	{
 		var id = db['skills'][skill].id
 		var name = db['skills'][skill].name
-		options += `<option value="skills.${id}">${name}</option>\n`
+		var value = `skills.${id}`
+		var selected = user_special.includes(value) ? "selected" : ""
+		
+		options += `<option value="${value}" ${selected}>${name}</option>\n`
 	}
 	return options
+}
+
+
+function getStatValue(unit, x, type)
+{
+	try
+	{
+		return unit['stats'][x][type];
+	}
+	catch(err)
+	{
+		console.log(`msg: ${err.message} ${x}, ${type}`)
+		return "-"
+	}
+	return "-"
 }
 
 function createUnitEditHtml(id, db)
 {
 	var unit = getDBUnit(id, db);
-	
-	
-	var weapon_options = createWeaponOptions(db,'melee') + createWeaponOptions(db,'range')
-	var special_options = createSpecialOptions(db)
 	
 	var innerHtml = `
 		<label for="unit_name_${id}">Enter weapon name: </label>
@@ -152,16 +170,18 @@ function createUnitEditHtml(id, db)
 			<th>Co</th>
 			<th>Special</th>
 		  </tr>`
-		  
+		
 		for(x = 0; x < 5; x++)
 		{
+			var weapon_options = createWeaponOptions(db,'melee', getStatValue(unit, x, 'weapon')) + createWeaponOptions(db,'range', getStatValue(unit, x, 'weapon'))
+			var special_options = createSpecialOptions(db, getStatValue(unit, x, 'special'))
 			innerHtml += `
 			<tr>
 				<td>
-					<input id="unit_${id}_${x}_ammount" type="text" value="x" oninput="saveUnit('${id}')" size="2">
+					<input id="unit_${id}_${x}_ammount" type="text" value="${getStatValue(unit, x, 'ammount')}" oninput="saveUnit('${id}')" size="2">
 				</td>
 				<td>
-					<input id="unit_${id}_${x}_name" type="text" value="x" oninput="saveUnit('${id}')" size="25">
+					<input id="unit_${id}_${x}_name" type="text" value="${getStatValue(unit, x, 'name')}" oninput="saveUnit('${id}')" size="25">
 				</td>
 				<td>
 					<select multiple id="unit_${id}_${x}_weapon" name="multi" oninput="saveUnit('${id}')" >
@@ -169,22 +189,22 @@ function createUnitEditHtml(id, db)
 					</select>
 				</td>
 				<td>
-					<input id="unit_${id}_${x}_ag" type="text" value="x" oninput="saveUnit('${id}')" size="2">
+					<input id="unit_${id}_${x}_ag" type="text" value="${getStatValue(unit, x, 'ag')}" oninput="saveUnit('${id}')" size="2">
 				</td>
 				<td>
-					<input id="unit_${id}_${x}_acc" type="text" value="x" oninput="saveUnit('${id}')" size="2">
+					<input id="unit_${id}_${x}_acc" type="text" value="${getStatValue(unit, x, 'acc')}" oninput="saveUnit('${id}')" size="2">
 				</td>
 				<td>
-					<input id="unit_${id}_${x}_str" type="text" value="x" oninput="saveUnit('${id}')" size="2">
+					<input id="unit_${id}_${x}_str" type="text" value="${getStatValue(unit, x, 'str')}" oninput="saveUnit('${id}')" size="2">
 				</td>
 				<td>
-					<input id="unit_${id}_${x}_res" type="text" value="x" oninput="saveUnit('${id}')" size="5">
+					<input id="unit_${id}_${x}_res" type="text" value="${getStatValue(unit, x, 'res')}" oninput="saveUnit('${id}')" size="5">
 				</td>
 				<td>
-					<input id="unit_${id}_${x}_init" type="text" value="x" oninput="saveUnit('${id}')" size="2">
+					<input id="unit_${id}_${x}_init" type="text" value="${getStatValue(unit, x, 'init')}" oninput="saveUnit('${id}')" size="2">
 				</td>
 				<td>
-					<input id="unit_${id}_${x}_co" type="text" value="x" oninput="saveUnit('${id}')" size="2">
+					<input id="unit_${id}_${x}_co" type="text" value="${getStatValue(unit, x, 'co')}" oninput="saveUnit('${id}')" size="2">
 				</td>
 				<td>
 					<select multiple id="unit_${id}_${x}_special" name="multi" oninput="saveUnit('${id}')" >
